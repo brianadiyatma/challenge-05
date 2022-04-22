@@ -45,10 +45,10 @@ const CarCard = (props) => {
         </div>
         <button
           className="button-card-container"
-          disabled={carCartSlice.some((element) => element === props.car.id)}
+          disabled={carCartSlice === props.car.id}
         >
           <div type="submit" className="button-card">
-            {carCartSlice.some((element) => element === props.car.id)
+            {carCartSlice === props.car.id
               ? "Lanjutkan Pembayaran"
               : "Pilih mobil"}
           </div>

@@ -151,7 +151,7 @@ const Car = (props) => {
                   </div>
                   <button
                     className="btn button-right-details-container"
-                    disabled={carCart.some((element) => element === car.id)}
+                    disabled={carCart  === car.id}
                     onClick={() =>
                       dispatch(
                         carCartSlice.actions.addCarToCart({ id: car.id })
@@ -159,7 +159,7 @@ const Car = (props) => {
                     }
                   >
                     <div type="submit" className="button-right-details">
-                      {carCart.some((element) => element === car.id)
+                      {carCart === car.id
                         ? "Lanjutkan Pembayaran"
                         : "Pilih mobil"}
                     </div>
@@ -171,15 +171,13 @@ const Car = (props) => {
           <div className="button-center-container-outer">
             <button
               className="btn button-center-container"
-              disabled={carCart.some((element) => element === car.id)}
+              disabled={carCart === car.id}
               onClick={() =>
                 dispatch(carCartSlice.actions.addCarToCart({ id: car.id }))
               }
             >
               <div type="submit" className="button-center">
-                {carCart.some((element) => element === car.id)
-                  ? "Lanjutkan Pembayaran"
-                  : "Pilih mobil"}
+                {carCart === car.id ? "Lanjutkan Pembayaran" : "Pilih mobil"}
               </div>
             </button>
           </div>
